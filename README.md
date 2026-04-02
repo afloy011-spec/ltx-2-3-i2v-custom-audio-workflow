@@ -39,19 +39,11 @@ Full **image-to-video** graph for **LTX Video** with a dedicated **custom-audio*
 
 ## Get the workflow
 
-<table style="width:100%; border-collapse: collapse;">
-  <thead>
-    <tr>
-      <th align="left" style="padding:8px;">File</th>
-      <th align="left" style="padding:8px;">Description</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td style="padding:8px;"><a href="workflows/LTX-2-3-I2V-Custom-Audio.json"><code>workflows/LTX-2-3-I2V-Custom-Audio.json</code></a></td>
-      <td style="padding:8px;">Exported ComfyUI graph (full pipeline).</td>
-    </tr>
-  </tbody>
+<table>
+<thead><tr><th align="left"><img width="400" height="1" alt=""><br>File</th><th align="left"><img width="600" height="1" alt=""><br>Description</th></tr></thead>
+<tbody>
+<tr><td><a href="workflows/LTX-2-3-I2V-Custom-Audio.json"><code>workflows/LTX-2-3-I2V-Custom-Audio.json</code></a></td><td>Exported ComfyUI graph (full pipeline).</td></tr>
+</tbody>
 </table>
 
 **Option A — Download ZIP**
@@ -77,67 +69,27 @@ This workflow uses the **Afloy Audio Tools** package, specifically **`afloy_Trim
 > [!IMPORTANT]
 > Without **`afloy_TrimAudio`** installed, the graph will not load correctly or nodes will be missing. Install [Afloy Audio Tools](https://github.com/afloy011-spec/afloy_audio_tools) under `ComfyUI/custom_nodes/`, then restart ComfyUI.
 
-### Inputs
+**Inputs**
 
-<table style="width:100%; border-collapse: collapse;">
-  <thead>
-    <tr>
-      <th align="left" style="padding:8px;">Name</th>
-      <th align="center" style="padding:8px;">Type</th>
-      <th align="left" style="padding:8px;">Description</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td style="padding:8px;"><code>audio</code></td>
-      <td align="center" style="padding:8px;">AUDIO</td>
-      <td style="padding:8px;">Audio tensor (e.g. from <strong>Load Audio</strong>).</td>
-    </tr>
-    <tr>
-      <td style="padding:8px;"><code>start_sec</code></td>
-      <td align="center" style="padding:8px;">FLOAT</td>
-      <td style="padding:8px;">Trim start time in seconds.</td>
-    </tr>
-    <tr>
-      <td style="padding:8px;"><code>end_sec</code></td>
-      <td align="center" style="padding:8px;">FLOAT</td>
-      <td style="padding:8px;">Trim end in seconds; <code>-1</code> means end of clip.</td>
-    </tr>
-  </tbody>
+<table>
+<thead><tr><th align="left"><img width="280" height="1" alt=""><br>Name</th><th align="left"><img width="140" height="1" alt=""><br>Type</th><th align="left"><img width="580" height="1" alt=""><br>Description</th></tr></thead>
+<tbody>
+<tr><td><code>audio</code></td><td><code>AUDIO</code></td><td>Audio tensor (e.g. from <strong>Load Audio</strong>).</td></tr>
+<tr><td><code>start_sec</code></td><td><code>FLOAT</code></td><td>Trim start time in seconds.</td></tr>
+<tr><td><code>end_sec</code></td><td><code>FLOAT</code></td><td>Trim end in seconds (<code>-1</code> = end of clip).</td></tr>
+</tbody>
 </table>
 
-### Outputs
+**Outputs**
 
-<table style="width:100%; border-collapse: collapse;">
-  <thead>
-    <tr>
-      <th align="left" style="padding:8px;">Name</th>
-      <th align="center" style="padding:8px;">Type</th>
-      <th align="left" style="padding:8px;">Description</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td style="padding:8px;"><code>audio</code></td>
-      <td align="center" style="padding:8px;">AUDIO</td>
-      <td style="padding:8px;">Trimmed audio.</td>
-    </tr>
-    <tr>
-      <td style="padding:8px;"><code>waveform_preview</code></td>
-      <td align="center" style="padding:8px;">IMAGE</td>
-      <td style="padding:8px;">Waveform preview image.</td>
-    </tr>
-    <tr>
-      <td style="padding:8px;"><code>duration_sec</code></td>
-      <td align="center" style="padding:8px;">FLOAT</td>
-      <td style="padding:8px;">Duration of trimmed segment (seconds).</td>
-    </tr>
-    <tr>
-      <td style="padding:8px;"><code>timecode</code></td>
-      <td align="center" style="padding:8px;">STRING</td>
-      <td style="padding:8px;">Formatted timecode string.</td>
-    </tr>
-  </tbody>
+<table>
+<thead><tr><th align="left"><img width="280" height="1" alt=""><br>Name</th><th align="left"><img width="140" height="1" alt=""><br>Type</th><th align="left"><img width="580" height="1" alt=""><br>Description</th></tr></thead>
+<tbody>
+<tr><td><code>audio</code></td><td><code>AUDIO</code></td><td>Trimmed audio.</td></tr>
+<tr><td><code>waveform_preview</code></td><td><code>IMAGE</code></td><td>Waveform preview image.</td></tr>
+<tr><td><code>duration_sec</code></td><td><code>FLOAT</code></td><td>Duration of trimmed segment (seconds).</td></tr>
+<tr><td><code>timecode</code></td><td><code>STRING</code></td><td>Formatted timecode string.</td></tr>
+</tbody>
 </table>
 
 [↑ Back to top](#ltx-video-i2v-custom-audio-comfyui-workflow)
@@ -148,31 +100,14 @@ This workflow uses the **Afloy Audio Tools** package, specifically **`afloy_Trim
 
 The JSON references many built-in and community nodes, including but not limited to:
 
-<table style="width:100%; border-collapse: collapse;">
-  <thead>
-    <tr>
-      <th align="left" style="padding:8px;">Area</th>
-      <th align="left" style="padding:8px;">Examples</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td style="padding:8px;"><strong>LTX Video</strong></td>
-      <td style="padding:8px;"><code>LTXVImgToVideoInplace</code>, <code>LTXVAudioVAEEncode</code>, <code>LTXVAudioVAEDecode</code>, <code>LTXVConcatAVLatent</code>, <code>LTXVSeparateAVLatent</code>, schedulers / sampling, etc.</td>
-    </tr>
-    <tr>
-      <td style="padding:8px;"><strong>Video</strong></td>
-      <td style="padding:8px;"><code>VHS_VideoCombine</code> (Video Helper Suite)</td>
-    </tr>
-    <tr>
-      <td style="padding:8px;"><strong>UI / utilities</strong></td>
-      <td style="padding:8px;"><strong>Power Lora Loader (rgthree)</strong>, KJNodes (<code>SimpleCalculatorKJ</code>, <code>VAELoaderKJ</code>, …), resize / mask nodes</td>
-    </tr>
-    <tr>
-      <td style="padding:8px;"><strong>Audio (extra)</strong></td>
-      <td style="padding:8px;"><strong>MelBand RoFormer</strong> loader + sampler nodes in the graph</td>
-    </tr>
-  </tbody>
+<table>
+<thead><tr><th align="left"><img width="400" height="1" alt=""><br>Area</th><th align="left"><img width="600" height="1" alt=""><br>Examples</th></tr></thead>
+<tbody>
+<tr><td><strong>LTX Video</strong></td><td><code>LTXVImgToVideoInplace</code>, <code>LTXVAudioVAEEncode</code>, <code>LTXVAudioVAEDecode</code>, <code>LTXVConcatAVLatent</code>, <code>LTXVSeparateAVLatent</code>, schedulers / sampling, etc.</td></tr>
+<tr><td><strong>Video</strong></td><td><code>VHS_VideoCombine</code> (Video Helper Suite)</td></tr>
+<tr><td><strong>UI / utilities</strong></td><td><strong>Power Lora Loader (rgthree)</strong>, KJNodes (<code>SimpleCalculatorKJ</code>, <code>VAELoaderKJ</code>, …), resize / mask nodes</td></tr>
+<tr><td><strong>Audio (extra)</strong></td><td><strong>MelBand RoFormer</strong> loader + sampler nodes in the graph</td></tr>
+</tbody>
 </table>
 
 Install the matching custom-node packs and place all model files where your ComfyUI loaders expect them; then fix paths in each **Load** node.
